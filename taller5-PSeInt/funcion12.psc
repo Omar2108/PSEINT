@@ -1,4 +1,4 @@
-Proceso ciclo7
+SubProceso evaluar <- evaluarOpcion (opcion)
 	Definir placa Como Caracter;
 	Definir placa1 Como Caracter;
 	Definir placa2 Como Caracter;
@@ -15,7 +15,6 @@ Proceso ciclo7
 	Definir telefono1 Como Entero;
 	Definir telefono2 Como Entero;
 	Definir telefono3 Como Entero;
-	Definir opcion Como Entero;
 	Definir registrar Como Entero;
 	Definir retirar Como Entero;
 	Definir consultar Como Entero;
@@ -50,12 +49,6 @@ Proceso ciclo7
 	fechaIngreso1 <- "12/02/2022 hora: 1:20 pm";
 	fechaIngreso2 <- "13/02/2022 hora: 2:40 pm";
 	fechaIngreso3 <- "14/02/2022 hora: 4:10 pm";
-	
-	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
-	Escribir "1.Ingresar vehiculo al parqueadero";
-	Escribir "2.Consultar vehiculo en parqueadero";
-	Escribir "3.Retirar vehiculo del parqueadero";
-	Leer opcion;
 	Mientras control Hacer
 		Segun opcion  Hacer
 			1:
@@ -144,4 +137,25 @@ Proceso ciclo7
 		FinSi
 		
 	FinMientras
+	
+FinSubProceso
+
+SubProceso opcion <- capturarOpcion ( )
+	Definir opcion Como Entero;
+	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
+	Escribir "1.Ingresar vehiculo al parqueadero";
+	Escribir "2.Consultar vehiculo en parqueadero";
+	Escribir "3.Retirar vehiculo del parqueadero";
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion12
+	Definir opcion Como Entero;
+	Definir evaluar Como Entero;
+	
+	opcion <- capturarOpcion();
+	evaluar <- evaluarOpcion(opcion);
+	
+	
 FinProceso

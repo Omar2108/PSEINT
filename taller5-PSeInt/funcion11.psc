@@ -1,4 +1,4 @@
-Proceso ciclo6
+SubProceso evaluar <- evaluarOpcion ( opcion)
 	Definir nombres Como Caracter;
 	Definir telefono Como Entero;
 	Definir telefono1 Como Entero;
@@ -12,7 +12,6 @@ Proceso ciclo6
 	Definir eliminar Como Entero;
 	Definir agregar Como Entero;
 	Definir consultar Como Entero;
-	Definir opcion Como Entero;
 	Definir contacto Como Caracter;
 	Definir contacto1 Como Caracter;
 	Definir contacto2 Como Caracter;
@@ -33,13 +32,6 @@ Proceso ciclo6
 	organizacion1 <- "Fundacion de la mujer";
 	organizacion2 <- "Fundacion por un mejor vivir";
 	organizacion3 <- "Fundacion por una ninez mejor";
-	
-	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
-	Escribir "1.Agregar";
-	Escribir "2.Consultar";
-	Escribir "3.Eliminar";
-	Leer opcion;
-	
 	Repetir
 		Segun opcion Hacer
 			1:
@@ -111,14 +103,28 @@ Proceso ciclo6
 		Leer control;
 		
 		Si control = Verdadero Entonces
-			Limpiar Pantalla;
-			Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
-			Escribir "1.Agregar";
-			Escribir "2.Consultar";
-			Escribir "3.Eliminar";
-			Leer opcion;
+			opcion <- capturarOpciones();
 		FinSi
+		
 	Hasta Que control = Falso
+FinSubProceso
+
+SubProceso opcion <- capturarOpciones ( )
+	Definir opcion Como Entero;
+	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
+	Escribir "1.Agregar";
+	Escribir "2.Consultar";
+	Escribir "3.Eliminar";
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion11
+	Definir opcion Como Entero;
+	Definir evaluar Como Entero;
+	
+	opcion <- capturarOpciones();
+	evaluar <- evaluarOpcion(opcion);
 	
 	
 FinProceso
