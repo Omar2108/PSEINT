@@ -1,4 +1,15 @@
-Proceso condicional10
+SubProceso opcion <- capturarOpcion ( )
+	Definir opcion Como Entero;
+	
+	Escribir "Ingrese un numero para eligir la operacion que desea realizar";
+	Escribir "1.Consultar";
+	Escribir "2.Retirar";
+	Escribir "3.Consignar";
+	Leer opcion;
+	
+FinSubProceso
+
+SubProceso evaluar <- evaluarOpciones ( opcion )
 	Definir cuenta1 Como Entero;
 	Definir cantidad Como Entero;
 	Definir cuenta2 Como Entero;
@@ -17,7 +28,6 @@ Proceso condicional10
 	Definir saldo2 Como Entero;
 	Definir saldo3 Como Entero;
 	Definir consulta Como Entero;
-	Definir opcion Como Entero;
 	Definir documento Como Entero;
 	Definir documento1 Como Entero;
 	Definir documento2 Como Entero;
@@ -60,12 +70,6 @@ Proceso condicional10
 	retiro <- 2;
 	ingreso <- 3;
 	
-	Escribir "Ingrese un numero para eligir la operacion que desea realizar";
-	Escribir "1.Consultar";
-	Escribir "2.Retirar";
-	Escribir "3.Consignar";
-	Leer opcion;
-	
 	Si opcion = consulta Entonces
 		Escribir "Consulta detalla de sus productos";
 		Escribir "Ingrese su numero de documento";
@@ -106,7 +110,7 @@ Proceso condicional10
 		FinSi
 		
 		
-	
+		
 	FinSi
 	
 	Si opcion = retiro Entonces
@@ -125,7 +129,7 @@ Proceso condicional10
 			SiNo
 				Escribir "Saldo insuficiente";
 			FinSi
-		
+			
 		FinSi
 		
 		Si documento = documento2 Y clave = clave2 Entonces
@@ -208,6 +212,16 @@ Proceso condicional10
 		Escribir "Usted eligio una opcion incorrecta, ingrese una opcion valida.";
 		
 	FinSi
+	
+FinSubProceso
+
+Proceso funcion10
+	
+	Definir opcion Como Entero;
+	Definir evaluar Como Entero;
+	
+	opcion <- capturarOpcion();
+	evaluar <- evaluarOpciones(opcion);
 	
 	
 FinProceso

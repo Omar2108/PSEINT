@@ -1,16 +1,15 @@
-Proceso condicionales4
-	Definir pelicula Como Caracter;
+SubProceso opciones <- evaluarOpciones (opcion)
 	Definir pelicula1 Como Caracter;
 	Definir pelicula2 Como Caracter;
 	Definir pelicula3 Como Caracter;
 	Definir fecha Como Caracter;
 	Definir devolverPelicula Como Caracter;
-	Definir opcion Como Entero;
 	Definir opcion1 Como Entero;
 	Definir opcion2 Como Entero;
 	Definir opcion3 Como Entero;
 	Definir opcion4 Como Entero;
 	Definir observaciones Como Caracter;
+	
 	opcion1 <- 1;//consultar peliculas disponibles 
 	opcion2 <- 2;//alquilar pelicula
 	opcion3 <- 3;//recibir pelicula
@@ -19,14 +18,6 @@ Proceso condicionales4
 	pelicula1 <- "Rambo";
 	pelicula2 <- "mi probre angelito";
 	pelicula3 <- "encanto";
-	
-	Escribir "1.consultar peliculas disponibles ";
-	Escribir "2.alquilar pelicula";
-	Escribir "3.recibir pelicula";
-	Escribir "4.observaciones";
-	Escribir "Ingrese un numero de acuerdo a la opcion que desee realizar";
-	leer opcion;
-	
 	Si opcion = 1 Entonces
 		Escribir "Estas son el listado de peliculas disponibles";
 		Escribir pelicula1;
@@ -68,5 +59,30 @@ Proceso condicionales4
 		Escribir "Escogiste una opcion incorrecta; ingrese una opcion valida";
 		
 	FinSi
-		
+	
+	
+FinSubProceso
+
+SubProceso opcion <- solicitarOpcion ( )
+	Definir opcion Como Entero;
+	Escribir "Ingrese un numero de acuerdo a la opcion que desee realizar";
+	leer opcion;	
+FinSubProceso
+
+Proceso funcion4
+	Definir pelicula Como Caracter;
+	Definir peliculas Como Caracter;
+	Definir opciones Como Entero;
+	Definir opcion Como Entero;
+	
+	Escribir "1.consultar peliculas disponibles ";
+	Escribir "2.alquilar pelicula";
+	Escribir "3.recibir pelicula";
+	Escribir "4.observaciones";
+	
+	opcion <- solicitarOpcion();
+	opciones <- evaluarOpciones(opcion);
+	
+	
+	
 FinProceso

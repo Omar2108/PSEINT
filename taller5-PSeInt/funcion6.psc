@@ -1,8 +1,5 @@
-Proceso condicionales6
+SubProceso evaluar <- evaluarOpciones ( opcion )
 	Definir servicios Como Caracter;
-	Definir ingreso Como Caracter;
-	Definir salida Como Caracter;
-	Definir opcion Como Caracter;
 	Definir fechaIngreso Como Caracter;
 	Definir fechaSalida Como Caracter;
 	Definir observaciones Como Caracter;
@@ -12,13 +9,12 @@ Proceso condicionales6
 	Definir cilindraje Como Entero;
 	Definir marca Como Caracter;
 	Definir cantidad Como Entero;
+	Definir ingreso Como Caracter;
+	Definir salida Como Caracter;
 	
 	ingreso <- "ingreso";
 	salida <- "salida";
-	Escribir ingreso;
-	Escribir salida;
-	Escribir "Escoga de las anteriores opciones, la accion que desea realizar.";
-	Leer opcion;
+	
 	
 	Si opcion = ingreso Entonces
 		Escribir "Fecha de ingreso al taller";
@@ -77,5 +73,28 @@ Proceso condicionales6
 		Escribir "Observaciones: ", observaciones;
 		Escribir "¡Muchas gracias por visitarnos!";
 	FinSi
+	
+FinSubProceso
+
+SubProceso opcion <- capturarOpcion ( )
+	Definir ingreso Como Caracter;
+	Definir salida Como Caracter;
+	Definir opcion Como Caracter;
+	ingreso <- "ingreso";
+	salida <- "salida";
+	Escribir ingreso;
+	Escribir salida;
+	Escribir "Escoga de las anteriores opciones, la accion que desea realizar.";
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion6
+	Definir opcion Como Caracter;
+	Definir evaluar Como Caracter;
+	
+	opcion <- capturarOpcion();
+	evaluar <- evaluarOpciones(opcion);
+	
 	
 FinProceso

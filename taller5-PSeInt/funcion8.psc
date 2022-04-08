@@ -1,8 +1,4 @@
-Proceso condicional8
-	Definir registrar Como Caracter;
-	Definir consultar Como Caracter;
-	Definir comprar Como Caracter;
-	Definir opcion Como Caracter;
+SubProceso evaluar <- evaluarOpciones ( opcion )
 	Definir nombreCliente Como Caracter;
 	Definir cantidad Como Entero;
 	Definir tipoTorta Como Caracter;
@@ -28,6 +24,13 @@ Proceso condicional8
 	Definir sabor1 Como Caracter;
 	Definir sabor2 Como Caracter;
 	Definir sabor3 Como Caracter;
+	Definir registrar Como Caracter;
+	Definir consultar Como Caracter;
+	Definir comprar Como Caracter;
+	
+	registrar <- "registrar";
+	consultar <- "consultar";
+	comprar <- "comprar";
 	
 	torta1 <- "1 libra";
 	torta2 <- "2 libras";
@@ -48,18 +51,6 @@ Proceso condicional8
 	precio1 <- 30000;
 	precio2 <- 60000;
 	precio3 <- 90000;
-	
-	registrar <- "registrar";
-	consultar <- "consultar";
-	comprar <- "comprar";
-	
-
-	
-	Escribir "Eliga la accion que desea realizar de acuerdo al siguiente menu de opciones.";
-	Escribir registrar;
-	Escribir consultar;
-	Escribir comprar;
-	Leer opcion;
 	
 	Si opcion = registrar  Entonces
 		Escribir "Nombre del cliente";
@@ -85,7 +76,7 @@ Proceso condicional8
 		Escribir "Fecha de registro del pedido: ",fechaRegistro;
 		Escribir "Valor a pagar: ",ValorApagar;
 		Escribir "¡Muchas gracias por visitarnos!";
-	
+		
 	FinSi
 	
 	Si opcion = consultar Entonces
@@ -117,13 +108,39 @@ Proceso condicional8
 		Escribir "Fecha de registro de la compra: ",fechaRegistro;
 		Escribir "Valor total a pagar: ",ValorApagar;
 		Escribir "¡Muchas gracias por visitarnos!";
-	
+		
 	FinSi
 	
 	Si opcion <> registrar Y opcion <> consultar Y opcion <> comprar Entonces
 		Escribir "Usted eligio una opcion incorrecta, ingrese una opcion valida.";
 	FinSi
 	
+FinSubProceso
+
+SubProceso opcion <- solicitarOpcion ( )
+	Definir opcion Como Caracter;
+	Definir registrar Como Caracter;
+	Definir consultar Como Caracter;
+	Definir comprar Como Caracter;
+	
+	registrar <- "registrar";
+	consultar <- "consultar";
+	comprar <- "comprar";
+	
+	Escribir "Eliga la accion que desea realizar de acuerdo al siguiente menu de opciones.";
+	Escribir registrar;
+	Escribir consultar;
+	Escribir comprar;
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion8
+	Definir opcion Como Caracter;
+	Definir evaluar Como Caracter;
+	
+	opcion <- solicitarOpcion();
+	evaluar <- evaluarOpciones(opcion);
 	
 	
 FinProceso

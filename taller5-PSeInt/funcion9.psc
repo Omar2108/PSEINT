@@ -1,4 +1,4 @@
-Proceso condicional9
+SubProceso evaluar <- evaluarOpciones ( opcion )
 	Definir logitud Como Real;
 	Definir base Como Real;
 	Definir base2 Como Real;
@@ -8,17 +8,11 @@ Proceso condicional9
 	Definir rectangulo Como Entero;
 	Definir triangulo Como Entero;
 	Definir trapecio Como Entero;
-	Definir opcion Como Entero;
+	
 	
 	rectangulo <- 1;
 	triangulo <- 2;
 	trapecio <- 3;
-	
-	Escribir "Eliga un numero de las siguientes opciones, la que desea calcular.";
-	Escribir "1.Rectangulo";
-	Escribir "2.Triangulo";
-	Escribir "3.Trapecio";
-	Leer opcion;
 	
 	Si opcion = rectangulo Entonces
 		Escribir "Ingrese la base del rectangulo";
@@ -28,7 +22,7 @@ Proceso condicional9
 		area <- base * altura;
 		Escribir "El area del rectangulo es: ",area;
 		
-	
+		
 	FinSi
 	
 	
@@ -60,4 +54,23 @@ Proceso condicional9
 		Escribir "Usted eligio una opcion incorrecta, ingrese una opcion valida.";
 	FinSi
 	
+	
+FinSubProceso
+
+SubProceso opcion <- capturarOpcion ( )
+	Definir opcion Como Entero;
+	Escribir "Eliga un numero de las siguientes opciones, la que desea calcular.";
+	Escribir "1.Rectangulo";
+	Escribir "2.Triangulo";
+	Escribir "3.Trapecio";
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion9
+	Definir opcion Como Entero;
+	Definir evaluar Como Entero;
+	
+	opcion <- capturarOpcion();
+	evaluar <- evaluarOpciones(opcion);
 FinProceso

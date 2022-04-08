@@ -1,4 +1,4 @@
-Proceso ciclo8
+SubProceso evaluar <- evaluarOpcion (opcion)
 	Definir control Como Logico;
 	Definir estudiante Como Caracter;
 	Definir estudiante1 Como Caracter;
@@ -12,7 +12,6 @@ Proceso ciclo8
 	Definir telefono1 Como Entero;
 	Definir telefono2 Como Entero;
 	Definir telefono3 Como Entero;
-	Definir opcion Como Entero;
 	Definir registrar Como Entero;
 	Definir resultado Como Entero;
 	Definir resultado1 Como Caracter;
@@ -53,11 +52,6 @@ Proceso ciclo8
 	
 	
 	Repetir
-		Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
-		Escribir "1.Ingresar al curso";
-		Escribir "2.Consultar estudiantes";
-		Escribir "3.Consultar resultados por estudiante";
-		Leer opcion;
 		
 		Segun opcion  Hacer
 			1:
@@ -95,8 +89,8 @@ Proceso ciclo8
 				Escribir "Numero de teleno: ",telefono2;
 				Escribir "Fecha de ingreso: ",fechaIngreso2;
 				Escribir "";
-			
-
+				
+				
 				Escribir "Nombre completo del estudiante: ",estudiante3;
 				Escribir "Numero de documento: ",documento3;
 				Escribir "Numero de teleno: ",telefono3;
@@ -161,6 +155,30 @@ Proceso ciclo8
 		Escribir "¿Quiere salir del sistema?";
 		Escribir "Ingrese 0 para salir O 1 para continuar.";
 		Leer control;
+		Si control = Verdadero Entonces
+			opcion <- capturarOpcion();
+		FinSi
 		Limpiar Pantalla;
 	Hasta Que control = Falso
+	
+FinSubProceso
+
+SubProceso opcion <- capturarOpcion()
+	Definir opcion Como Entero;
+	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
+	Escribir "1.Ingresar al curso";
+	Escribir "2.Consultar estudiantes";
+	Escribir "3.Consultar resultados por estudiante";
+	Leer opcion;
+	
+FinSubProceso
+
+Proceso funcion13
+	Definir opcion Como Entero;
+	Definir evaluar Como Entero;
+	
+	opcion <- capturarOpcion();
+	evaluar <- evaluarOpcion(opcion);
+	
+	
 FinProceso
