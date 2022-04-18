@@ -1,53 +1,25 @@
 Proceso miAppCiclos
-	Definir incremento Como Entero;
-	Definir control Como Logico;
-	control <-Verdadero;
-	Escribir "Escriba Verdadero para iniciar o parar la ejecucion";
-	leer control;
-	incremento<-0;
+	Definir asterisco,espacios,a,b,c Como Entero;
+	a <- 1;
+	asterisco <- 1;
+	espacios <- a-1;
+	Para a <- 1 Hasta 10 Con Paso 1 Hacer
+		//manejo de espacios 
+		Para b <- 0 Hasta a-1 Con Paso -1 Hacer
+			Escribir " " Sin Saltar;
+		FinPara
+		//manejo de asteriscos
+		Para c <- 1 Hasta a-1 Con Paso 1 Hacer
+			Escribir "*" Sin Saltar;
+		FinPara
+		Escribir "";
+		asterisco <- asterisco + asterisco;
+		espacios <- espacios - espacios;
+	FinPara
 	
-	Mientras control = verdadero Hacer
-		Si incremento = 0 Entonces
-			Escribir "*          ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 1 Entonces
-			Escribir "**         ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 2 Entonces
-			Escribir "***        ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 3 Entonces
-			Escribir "****       ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 4 Entonces
-			Escribir "*****      ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 5 Entonces
-			Escribir "******     ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 6 Entonces
-			Escribir "*******    ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 7 Entonces
-			Escribir "********   ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 8 Entonces
-			Escribir "********* ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 9 Entonces
-			Escribir "**********";
-		FinSi
-		
-	FinMientras
+	
+	
+	
 	
 	
 	

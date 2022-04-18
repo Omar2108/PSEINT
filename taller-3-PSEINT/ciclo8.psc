@@ -50,20 +50,20 @@ Proceso ciclo8
 	resultado2 <- "no-aprobado";
 	resultado3 <- "En aprobacion";
 	
-	
+	Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
+	Escribir "1.Ingresar al curso";
+	Escribir "2.Consultar estudiantes";
+	Escribir "3.Consultar resultados por estudiante";
+	Leer opcion;
 	
 	Repetir
-		Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
-		Escribir "1.Ingresar al curso";
-		Escribir "2.Consultar estudiantes";
-		Escribir "3.Consultar resultados por estudiante";
-		Leer opcion;
 		
-		Segun opcion  Hacer
+		
+		Segun opcion Hacer
 			1:
 				Escribir "Ingrese el nombre completo del estudiante";
 				Leer estudiante;
-				Escribir "Ingrese le numero de documento .";
+				Escribir "Ingrese le numero de documento.";
 				Leer documento;
 				Escribir "Ingrese le numero del contacto.";
 				Leer telefono;
@@ -75,13 +75,10 @@ Proceso ciclo8
 				Escribir "Numero de documento del estudiante: ",documento;
 				Escribir "Numero de telefono de contacto: ",telefono;
 				Escribir "Fecha de ingreso al curso: ",fechaIngreso;
-				Escribir "¿Quiere salir del sistema?";
-				Escribir "Ingrese 0 para salir O 1 para continuar.";
-				Leer control;
 				
 			2:
 				
-				Escribir "Datos del estudiante";
+				Escribir "Datos de los estudiantes";
 				Escribir "";
 				Escribir "Nombre completo del estudiante: ",estudiante1;
 				Escribir "Numero de documento: ",documento1;
@@ -95,15 +92,13 @@ Proceso ciclo8
 				Escribir "Numero de teleno: ",telefono2;
 				Escribir "Fecha de ingreso: ",fechaIngreso2;
 				Escribir "";
-			
-
+				
+				
 				Escribir "Nombre completo del estudiante: ",estudiante3;
 				Escribir "Numero de documento: ",documento3;
 				Escribir "Numero de teleno: ",telefono3;
 				Escribir "Fecha de ingreso: ",fechaIngreso3;
-				Escribir "¿Quiere salir del sistema?";
-				Escribir "Ingrese 0 para salir O 1 para continuar.";
-				Leer control;
+				
 				
 			3:
 				Escribir "Ingrese el numero de documento del estudiante";
@@ -115,9 +110,7 @@ Proceso ciclo8
 					Escribir "Numero de teleno: ",telefono1;
 					Escribir "Fecha de ingreso: ",fechaIngreso1;
 					Escribir "Estado del curso: ", resultado1;
-					Escribir "¿Quiere salir del sistema?";
-					Escribir "Ingrese 0 para salir O 1 para continuar.";
-					Leer control;
+					
 				FinSi
 				
 				Si documento = documento2 Entonces
@@ -127,9 +120,7 @@ Proceso ciclo8
 					Escribir "Numero de teleno: ",telefono2;
 					Escribir "Fecha de ingreso: ",fechaIngreso2;
 					Escribir "Estado del curso: ", resultado2;
-					Escribir "¿Quiere salir del sistema?";
-					Escribir "Ingrese 0 para salir O 1 para continuar.";
-					Leer control;
+					
 				FinSi
 				
 				Si documento = documento3 Entonces
@@ -139,28 +130,29 @@ Proceso ciclo8
 					Escribir "Numero de teleno: ",telefono3;
 					Escribir "Fecha de ingreso: ",fechaIngreso3;
 					Escribir "Estado del curso: ", resultado3;
-					Escribir "¿Quiere salir del sistema?";
-					Escribir "Ingrese 0 para salir O 1 para continuar.";
-					Leer control;
+					
 				FinSi
 				
 				Si documento <> documento1 Y documento <> documento2 Y documento <> documento3 Entonces
 					Escribir "La persona con el numero de documento ingresado no se encuentra registrado en el sistema";
-					Escribir "¿Quiere salir del sistema?";
-					Escribir "Ingrese 0 para salir O 1 para continuar.";
-					Leer control;
+					
 					
 				FinSi
 			De Otro Modo:
 				Escribir "¡Error!";
 				Escribir "Eligio una opcion incorrecta, eliga una opcion valida";
-				Escribir "¿Quiere salir del sistema?";
-				Escribir "Ingrese 0 para salir O 1 para continuar.";
-				Leer control;
 		FinSegun
+		
 		Escribir "¿Quiere salir del sistema?";
 		Escribir "Ingrese 0 para salir O 1 para continuar.";
 		Leer control;
-		Limpiar Pantalla;
+		Si control = Verdadero Entonces
+			Limpiar Pantalla;
+			Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
+			Escribir "1.Ingresar al curso";
+			Escribir "2.Consultar estudiantes";
+			Escribir "3.Consultar resultados por estudiante";
+			Leer opcion;
+		FinSi
 	Hasta Que control = Falso
 FinProceso

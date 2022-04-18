@@ -41,7 +41,7 @@ Proceso ciclo7
 	
 	marcaAuto1 <- "mazda";
 	marcaAuto2 <- "ferrari";
-	marcaAuto1 <- "toyota";
+	marcaAuto3 <- "toyota";
 	
 	telefono1 <- 1234;
 	telefono2 <- 2314;
@@ -63,7 +63,7 @@ Proceso ciclo7
 				Leer placa;
 				Escribir "Ingrese el nombre completo del propietario o quien registrar el vehiculo";
 				Leer nombreCompleto;
-				Escribir "Ingrese le numero del contacto.";
+				Escribir "Ingrese el numero del contacto.";
 				Leer telefono;
 				Escribir "Ingrese la marca del vehiculo ingresado.";
 				Leer marcaAuto;
@@ -136,11 +136,13 @@ Proceso ciclo7
 		Leer control;
 		
 		Si control = Verdadero Entonces
+			Limpiar Pantalla;
 			Escribir "Eligia de la siguintes opciones, la accion que desea realizar";
 			Escribir "1.Ingresar vehiculo al parqueadero";
 			Escribir "2.Consultar vehiculo en parqueadero";
 			Escribir "3.Retirar vehiculo del parqueadero";
 			Leer opcion;
+			
 		FinSi
 		
 	FinMientras

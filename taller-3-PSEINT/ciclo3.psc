@@ -1,70 +1,43 @@
 Proceso miAppCiclos3
-	Definir incremento Como Entero;
+	Definir a,b,c,d,i,j,k,n, asterisco, espacios Como Entero;
+	Definir final1 Como Entero;
+	Definir final2 Como Entero;
+	Definir final3 Como Entero;
 	Definir control Como Logico;
 	control <-Verdadero;
-	Escribir "Escriba Verdadero para iniciar o parar la ejecucion";
-	leer control;
-	incremento<-0;
+	asterisco <- 1;
+	espacios <- 1;
+	n <- 10;
+	a <- 0;
+	i <- 0;
+	b <- 0;
+	final1 <- n +(n/2);
+	final2 <- (2*a)-1;
+	final3 <- n -(n/2);
 	
-	Mientras control = verdadero Hacer
-		Si incremento = 0 Entonces
-			Escribir "     *     ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 1 Entonces
-			Escribir "     **     ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 2 Entonces
-			Escribir "    ***    ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 3 Entonces
-			Escribir "    ****    ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 4 Entonces
-			Escribir "   *****   ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 5 Entonces
-			Escribir "   ******   ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 6 Entonces
-			Escribir "  *******  ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 7 Entonces
-			Escribir "  ********  ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 8 Entonces
-			Escribir " ********* ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento = 9 Entonces
-			Escribir " ********** ";
+	Repetir
+		Para a <- 0 Hasta n Con Paso 1 Hacer
+			Para i<-n/2 Hasta a-4 Con Paso -1 Hacer
+				Escribir " " Sin Saltar;
+			FinPara
+			Para b <- 0 Hasta a*2  Con Paso 1 Hacer
+				Escribir "*" Sin Saltar;
+			FinPara
+			Escribir "";
+			
+		FinPara
+		Para a <- 1 Hasta 4 Con Paso 1 Hacer
+			Para i<-4/2 Hasta a-6 Con Paso -1 Hacer
+				Escribir " " Sin Saltar;
+			FinPara
+			Para b <- 0 Hasta a*2  Con Paso 1 Hacer
+				Escribir "*" Sin Saltar;
+			FinPara
+			Escribir "";
+			
+		FinPara
+		control <- Falso;
+	Hasta Que control = Falso
+	
 
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento=10 Entonces
-			Escribir "   ****   ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento=11 Entonces
-			Escribir "   ****   ";
-		FinSi
-		incremento<-incremento + 1;
-		Si incremento=12 Entonces
-			Escribir "   ****   ";
-		FinSi
-		incremento<-incremento + 1;
-		
-		
-		
-	FinMientras
-	
-	
-	
 FinProceso
