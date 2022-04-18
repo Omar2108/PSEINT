@@ -31,18 +31,10 @@ Proceso matrices
 	FinPara
 	
 	Escribir "";
+
 	
 	Para filas<-0 Hasta 3 Con Paso 1 Hacer
-		Para columnas<-4 Hasta 0 Con Paso -1 Hacer
-			Escribir matriz[filas,columnas], " " Sin Saltar;
-		FinPara
-		Escribir "";
-	FinPara
-	
-	Escribir "";
-	
-	Para filas<-0 Hasta 3 Con Paso 1 Hacer
-		Si filas == 1 Y filas == 3 Entonces
+		Si filas ==1 O filas == 3 Entonces
 			Para columnas<-4 Hasta 0 Con Paso -1 Hacer
 				Escribir matriz[filas,columnas], " " Sin Saltar;
 			FinPara
